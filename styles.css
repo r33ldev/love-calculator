@@ -397,3 +397,9 @@ footer {
    width: 10%;
  }
 }
+@media (max-width:350px) {
+  .navbar-nav a{
+   padding-left: 1px!important;
+   font-size: .5rem;
+ }
+}
