@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="twitter:" content="Love Meter">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate how much love your partner has for you, How compatible you and your partner are, possible getting together of you and your crush by answering some few questions.">
+  <meta name="keyword" content="Love Calculator, Love meter, partner, crush, love...">
+  <script src="https://kit.fontawesome.com/7ca27dff9b.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Ubuntu&family=Vampiro+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Love Meter - True Love and Compability Calculator </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="background-image:url(bg.jpg);">
+
+  <div class="allContents ">
+    <!-- Do you share a special connection with someone? Is he or she your special person? This Love meter will help you find out. -->
+
+    <div class="header">
+
+      <nav class="navbar navbar-expand-lg container">
+
+        <i class="navbar-brand brandNav"><a href="index.html"><img src="logo.png" alt="" width="30%"></a></i>
+
+        <ul class="navbar-nav ml-auto linkNav">
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">How it Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sites.html">Love Sites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="psycho.html">Love Psychology</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+  <div class="shadow-sm" id="contents">
+
+    <h1 class="calcText1">Welcoming you to this LoveMeter that allows you to calculate in percentage: love, compatibility as well as possible chances of a successful relationship.</h1>
+
+    <p class="calcText"> This is a simple Love Calculator which displays love percentage based on names. We all know that a name can tell a lot about a person. Names are not randomly chosen: they all have a meaning. Psychologist knew this so they
+      made another great
+      invention just for the lonely you!</p>
+    <p class="calcText3">To find out the chances of you and your dream partner getting together, just fill in both full names (both first and last name) in the two text boxes below, answer some more questions and press <i>Calculate!</i> </p>
+    <p class="calcText2">To find out the chances of you and your dream partner getting together, just fill in both full names below</p>
+
+
+    <form class="calcForm shadow" action="index.html" method="post">
+      <h2 class="loveh2">Love Form</h2>
+      <div class="inputs row">
+        <div class="col-lg-6 col-lg-6" id="nameInput">
+          <label for="yourName"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-heart-half  calcFormIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 1.314C3.562-3.248-7.534 4.735 8 15V1.314z" />
+              <path fill-rule="evenodd"
+                d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+            </svg></label>
+          <input class="textInput" id="testerNameInput" type="text" name="lName" value="" placeholder="Your Full Name" onkeyup="enableDisable(this)" autofocus> <br />
+          <label for="yourName"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-heart-fill calcFormIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+            </svg></label>
+          <input class="textInput" id="crushNameInput" type="text" name="Lname" value="" placeholder="Your Crush's Name" onkeyup="enableDisable(this)">
+        </div>
+        <div class="radioInput col-lg-6 col-lg-6">
+          <select class="gender" required>
+            <option>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select> <br />
+          <select id="gender" required>
+            <option>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+      <input onclick="scoreCalc()" type="button" name="" value="Calculate" class="btn btn-outline-light" disabled="disabled" id="loveSubmit">
+    </form>
+  </div>
+
+  <div class="shadow-sm container" id="contentsResult">
+    <div class="calcForm2">
+      <span id="testedName">Michael Adebisi</span> &nbsp; &nbsp;
+      <span class="andImage"> <img src="heart.jpg" alt="" width="5%"> </span> &nbsp; &nbsp;
+      <span id="crushedName">Alizeh Shah</span>
+
+      <p id="scoreBoard" class="shadow">10%</p>
+      <p id="scoreMessage30">The chance of a relationship working out between <span id="messageTestedName30">Michael Adebisi</span> and <span id="messageCrushName30">Alizeh Shah</span> is not very big, but a relationship is still possible anyway, if
+        the
+        two of you really want it to, and are prepared to make some sacrifices for it. You'll have to spend a lot of quality time together. You must be aware of the fact that this relationship might not work out at all, no matter how much time you
+        invest in it.
+      </p>
+      <p id="scoreMessage10"> This relationship between <span id="messageTestedName10">Michael Adebisi</span> and <span id="messageCrushName10">Alizeh Shah</span> might not work, despite any amount of effort put to it. According to factors we put in
+        consideration, We suggest you try other person around you by applying first-principle-thinking method. If this works, congrats, if it doesn't, well. You may still try your luck, but the chance is very thin!
+      </p>
+      <p id="scoreMessage50">A successful relationship is possible between <span id="messageTestedName50">Michael Adebisi</span> and <span id="messageCrushName50">Alizeh Shah</span> but you both have to work on it. Do not sit back and think that it
+        will all work out fine, because it might not be working out the way you wanted it to. Spend as much time with each other as possible. Again, the chance of this relationship working out is not certain, so even when you do work hard on it, it
+        still might not work out.</p>
+      <p id="scoreMessage70">A relationship between <span id="messageTestedName70">Michael Adebisi</span> and <span id="messageCrushName70">Alizeh Shah</span> has a reasonable chance of working out, but on the other hand, it might not. Your
+        relationship may suffer good and bad times. If things might not be working out as you would like them to, do not hesitate to talk about it with the person involved. Spend time together, talk with each other.</p>
+      <p id="scoreMessage80">Hmmn, Yummy!!! We think that the relationship between <span id="messageTestedName80">Michael Adebisi</span> and <span id="messageCrushName80">Alizeh Shah</span> has a very good chance of being successful, but this doesn't
+        mean that you don't have to work on the relationship. Remember that every relationship needs spending time together, talking with each other etc.</p>
+      <p id="scoreMessage100">Congratulation!!! you've got yourself a partner! If you and <span id="messageCrushName100">Alizeh Shah 💞 </span> could not still get together, forget it, it is not your calling!</p>
+
+      <button type="button" name="button" onclick="window.location.reload();" class="btn btn-outline-light">Calculate Again</button>
+    </div>
+  </div>
+  </div>
+
+  <footer class="">
+    <a href="https://github.com/3DMyte/Love-Calculator"> <p class="btn btn-lg btn-light footerBtn">CONTRIBUTE <br> ON &nbsp;<i class="fab fa-2x fa-github"></i></p> </a>
+    <div class="footerLinks">
+      <span class="footerLinksSpan"> <a href="#">Disclaimer</a> </span> <span class="footerLinksSpan"><a href="#">Privacy + Policy</a></span> <span class="footerLinksSpan"><a href="#">Contact </a></span> <span class="footerLinksSpan"><a
+          href="#">About Us </a> </span> <span class="footerLinksSpan"><a href="#">FAQ's </a> </span>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="javascript.js" charset="utf-8"></script>
+</body>
+
+</html>
