@@ -8,10 +8,29 @@ function enableDisable(crushNameInput) {
 };
 
 var loveScore = Math.floor(Math.random() * 100) + 1;
-
+document.querySelector('option').style.color = 'pink'
 function scoreCalc() {
   var crushName = document.getElementById("crushNameInput").value;
   var testName = document.getElementById("testerNameInput").value;
+  let names = crushName + testName
+  
+
+
+const l = (names.match(/l/g) || []).length 
+const o = (names.match(/o/g) || []).length
+const v = (names.match(/v/g) || []).length
+const e = (names.match(/e/g) || []).length
+const t = (names.match(/t/g) || []).length
+const r = (names.match(/r/g) || []).length
+let u = (names.match(/u/g) || []).length
+
+let loveStrScore = String(l + o + v + e)
+let trueScore = String(t + r + u + e)
+
+let loveScore = loveStrScore + trueScore
+
+
+
   document.getElementById("contents").style.display = "none";
   document.getElementById("contentsResult").style.display = "block";
   document.getElementById("scoreBoard").innerText = loveScore + "%"
