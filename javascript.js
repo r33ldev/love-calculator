@@ -6,8 +6,6 @@ function enableDisable(crushNameInput) {
     loveSubmit.disabled = true;
   }
 };
-
-var loveScore = Math.floor(Math.random() * 100) + 1;
 document.querySelector('option').style.color = 'pink'
 function scoreCalc() {
   var crushName = document.getElementById("crushNameInput").value;
