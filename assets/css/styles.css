@@ -202,6 +202,19 @@ footer {
   border: 2px solid red;
   margin-top: 5%;
 }
+#shareScore {
+  margin: 0 auto;
+  /* background: rgb(234, 100, 167); */
+  cursor: pointer;
+  background: #ee2d60;
+  width: 15%;
+  font-size: 1rem;
+  padding: .5rem 0;
+  color: white;
+  border-radius: 10px;
+  border: 2px solid red;
+  margin-top: 5%;
+}
 
 #messageCrushName10, #messageTestedName10, #messageCrushName30, #messageTestedName30, #messageCrushName50, #messageTestedName50, #messageCrushName70, #messageTestedName70, #messageCrushName80, #messageTestedName80, #messageCrushName100 {
   color: white;
