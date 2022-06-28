@@ -72,7 +72,7 @@ const shareScore = (_) => {
     var img = new Image();
     img.src = imagePath;
     loveImage = new Image();
-    loveImage.src = '../assets/img/heart.jpg';
+    loveImage.src = 'assets/img/heart.jpg';
     img.onload = function () {
       context.drawImage(img, 0, 0);
       context.lineWidth = 1;
