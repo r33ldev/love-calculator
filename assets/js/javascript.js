@@ -105,7 +105,7 @@ const shareScore = (_) => {
     };
   }
   fillCanvas(
-    '../assets/img/love_card.png',
+    'assets/img/love_card.png',
     'Love Calculator at https://calulate.lol',
     crushName,
     testName,
