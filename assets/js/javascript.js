@@ -8,7 +8,7 @@ function enableDisable(crushNameInput) {
 }
 
 document.querySelector('option').style.color = 'pink';
-function scoreCalc() {
+async function scoreCalc() {
   var crushName = document.getElementById('crushNameInput').value;
   var testName = document.getElementById('testerNameInput').value;
   let names = crushName + testName;
@@ -23,8 +23,8 @@ function scoreCalc() {
 
   let loveStrScore = String(l + o + v + e);
   let trueScore = String(t + r + u + e);
-
-  let loveScore = loveStrScore + trueScore;
+  let totalScore = loveStrScore + trueScore;
+  let loveScore = totalScore > 95 ? 95 : totalScore;
 
   document.getElementById('contents').style.display = 'none';
   document.getElementById('contentsResult').style.display = 'block';
@@ -56,13 +56,16 @@ function scoreCalc() {
   document.getElementById('messageTestedName80').innerText = testName;
   document.getElementById('messageCrushName80').innerText = crushName;
   document.getElementById('messageCrushName100').innerText = crushName;
+
+  const file = await generateCanvas();
 }
 
 // generate png image of the score
-const shareScore = (_) => {
+let funcCount = 0;
+const generateCanvas = async () => {
   var crushName = document.getElementById('crushNameInput').value;
   var testName = document.getElementById('testerNameInput').value;
-  console.log('share');
+  console.log('gen');
   const canvas = document.getElementById('canvas');
   function fillCanvas(imagePath, domain, crushName, testName, percentage) {
     var circle_canvas = document.getElementById('canvas');
@@ -73,7 +76,7 @@ const shareScore = (_) => {
     img.src = imagePath;
     loveImage = new Image();
     loveImage.src = 'assets/img/heart.jpg';
-    img.onload = function () {
+    img.onload = async function () {
       context.drawImage(img, 0, 0);
       context.lineWidth = 1;
       context.fillStyle = 'rgb(234, 100, 167)';
@@ -112,33 +115,39 @@ const shareScore = (_) => {
     document.getElementById('scoreBoard').innerText
   );
 
-  const canvasImage = canvas.toDataURL('image/png');
   // const convertedImage = new Image();
   //   convertedImage.src = canvasImage;
-  // console.log('convertedImage', convertedImage);
-
-  function dataURLtoFile(dataurl, filename) {
-    var arr = dataurl.split(','),
-      mime = arr[0].match(/:(.*?);/)[1],
-      bstr = atob(arr[1]),
-      n = bstr.length,
-      u8arr = new Uint8Array(n);
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n);
+  const canvasImage = await canvas.toDataURL('image/png');
+  let file;
+  if (canvasImage) {
+    function dataURLtoFile(dataurl, filename) {
+      var arr = dataurl.split(','),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]),
+        n = bstr.length,
+        u8arr = new Uint8Array(n);
+      while (n--) {
+        u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new File([u8arr], filename, { type: mime });
     }
-    return new File([u8arr], filename, { type: mime });
-  }
 
-  //Usage example:
-  var file = dataURLtoFile(canvasImage, 'love.png');
-  console.log(file);
+    //Usage example:
+    file = dataURLtoFile(canvasImage, 'love.png');
+  }
+  funcCount += 1;
+  return file;
+};
+
+const shareScore = async (_) => {
+  const file = await generateCanvas();
 
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     navigator
       .share({
         files: [file],
-        title: 'Love Calculator',
-        text: 'Calculate your love percentage by going to https://calulate.lol',
+        // title: 'Love Calculator',
+        // text: 'Calculate your love percentage by going to https://calulate.lol',
       })
       .then(() => console.log('Share was successful.'))
       .catch((error) => console.log('Sharing failed', error));
