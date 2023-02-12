@@ -2,7 +2,7 @@
 
 # Love Calculator
 
-#### Greetings and welcome to [super-devmike.github.io/love-calculator v1 ❤️](https://super-devmike.github.io/love-calculator/)  </a>
+#### Greetings and welcome to [r33ldev.github.io/love-calculator v1 ❤️](https://r33ldev.github.io/love-calculator/)  </a>
 ## live at [calculate.lol](https://calculate.lol)
  This is a simple Love Calculator which displays love percentage based on names. We all know that a name can tell a lot about a person. Names are not randomly chosen: they all have a meaning. Psychologist knew this so they made another great invention just for the lonely you!
 
